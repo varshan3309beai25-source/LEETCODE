@@ -6,7 +6,7 @@ class Solution {
 
      for(int i=n-1;i>=0;i--){
 
-        if(Character.getNumericValue(num.charAt(i))%2!=0){
+        if((num.charAt(i)-'0')%2!=0){
             return num.substring(0,i+1);
         }
      }   
