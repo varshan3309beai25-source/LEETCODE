@@ -4,20 +4,18 @@ class Solution {
 
         int n = nums.length;
 
-        int fmax = -1;
-        int smax = -1;
+        int curr = nums[0];
 
-        for(int i=0;i<n;i++){
-            if(nums[i]>fmax){
-                smax = fmax;
-                fmax = nums[i];
-            }
-            else {
-                smax = Math.max(smax,nums[i]);
-            }
-            
+        int res = 0;
+
+        for(int i=1;i<n;i++){
+
+            res = Math.max(res, (nums[i]-1) *(curr-1));
+
+            curr= Math.max(curr,nums[i]);
         }
-        return ( fmax-1) * (smax-1);
+
+        return res;
         
     }
 }
