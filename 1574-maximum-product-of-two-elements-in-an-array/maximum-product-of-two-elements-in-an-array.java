@@ -1,18 +1,24 @@
 class Solution {
     public int maxProduct(int[] nums) {
-        int n = nums.length;
 
-        int current_max = nums[0];
+            int n = nums.length;
 
-        int result = 0;
+            int f_m = 0;
+            int s_m = 0;
 
-        for(int i=1;i<n;i++){
+            for(int i=0;i<n;i++){
+                if(nums[i]>f_m){
+                    s_m = f_m;
+                    f_m = nums[i];
+                }
 
-          result = Math.max(result, (nums[i]-1)*(current_max-1));
+                else{
+                    s_m = Math.max(s_m,nums[i]);
+                }
+            }
 
-            current_max = Math.max(nums[i],current_max);
-        }
+            return (f_m-1)*(s_m-1);
 
-        return result;
+
     }
 }
