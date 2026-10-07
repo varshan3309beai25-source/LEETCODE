@@ -1,20 +1,20 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
         
-        int slow = 1;
-        int fast  = 1;
 
-        while(fast<nums.length){
+        int s = 1;
+        int f = 1;
 
-            if(nums[fast] != nums[slow-1]){
+        while(f<nums.length){
 
-                nums[slow] = nums[fast];
-
-                slow++;
+            if(nums[f] != nums[s-1]){
+                nums[s] = nums[f];
+                s++;
             }
-            fast++;
+
+            f++;
         }
 
-        return slow;
+        return s;
     }
 }
