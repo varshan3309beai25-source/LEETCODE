@@ -5,16 +5,15 @@ class Solution {
         int f = 1;
 
         while(f<nums.length){
-            if(nums[s-1] != nums[f]){
-                nums[s] = nums[f];
-                s++;
-            }
-            else{
+
+            if(nums[f]  == nums[s-1]){
                 f++;
             }
-            
+            else{
+                nums[s] = nums[f];
+                s++; 
+            }
         }
         return s;
-    
     }
 }
